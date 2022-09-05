@@ -13,16 +13,22 @@ linksItems.forEach(item => {
 	})
 })
 // Dealing With Menu Icon
-let theHeader = document.querySelector("header");
 let headerContent = document.querySelector("header .container .content");
 let menuIcon = document.querySelector("span.menu-icon");
 let closeIcon = document.querySelector("span.exit-icon");
+let grayscale = document.querySelector("body .grayscale");
+
 
 menuIcon.addEventListener("click", _ => {
 	headerContent.style.right = "0";
-	document.body.classList.add("grayscale");
+	grayscale.style.zIndex= "1";
 })
 closeIcon.addEventListener("click", _ => {
 	headerContent.style.right = "-220px";
-	document.body.classList.remove("grayscale");
+	grayscale.style.zIndex= "-1";
+})
+grayscale.addEventListener("click", _ => {
+	headerContent.style.right = "-220px";
+	grayscale.style.zIndex= "-1";
+	console.log("Clicked");
 })
